@@ -35,8 +35,8 @@ module.exports = {
         options: {
           limit: 100,
           fallback: 'file-loader',
-          publicPath: '/img',
-          outputPath: '/img',
+          publicPath: './img',
+          outputPath: './img',
         },
       },
     ]
