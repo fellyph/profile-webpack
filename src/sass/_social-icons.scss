@@ -1,14 +1,15 @@
 .social {
   text-align: right;
 
-  .links {
+  &__item {
+    display: inline-block;
+    margin-left: 0.5em;
+    cursor: pointer;
+  }
+
+  &__links {
     list-style: none;
     padding: 0;
-    .item {
-      display: inline-block;
-      margin-left: 0.5em;
-      cursor: pointer;
-    }
 
     a {
       display: inline-block;
