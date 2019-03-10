@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,13 +14,14 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        use: {
+        use: [{
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env']
           }
-        }
-      },
+        },
+        'eslint-loader',
+      ] },
       {
         test: /\.(sa|sc|c)ss$/,
         exclude: /(node_modules|bower_components)/,
@@ -46,6 +48,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'dist'),
   },
   plugins: [
+    new StyleLintPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       title: 'Fellyph Cintra Front-end Engineer',
