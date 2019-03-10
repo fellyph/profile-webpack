@@ -47,6 +47,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       title: 'Fellyph Cintra Front-end Engineer',
       template: './src/index.html',
       favicon: false,

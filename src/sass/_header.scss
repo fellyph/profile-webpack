@@ -19,9 +19,16 @@
     margin-top: 0;
   }
 
-  &__photo {
-    width: 200px;
-    height: 200px;
-    shape-outside: circle();
+  &__profile {
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 2em;
+  }
+
+  &__picture {
+    max-width: 100%;
+    height: auto;
+    border-radius: 100%;
+    margin-right: 2em;
   }
 }
