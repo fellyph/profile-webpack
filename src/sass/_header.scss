@@ -1,0 +1,58 @@
+
+/*
+ * header
+ */
+
+.header {
+  padding-top: 2em;
+}
+
+.social {
+  text-align: right;
+
+  .links {
+    list-style: none;
+    padding: 0;
+    .item {
+      display: inline-block;
+      margin-left: 0.5em;
+      cursor: pointer;
+    }
+
+    a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $primary;
+      color: #333;
+      font-size: 1.8em;
+      text-align: center;
+      padding: 0.3em;
+      background-image: radial-gradient(circle at center, $secondary 50%, $primary 50%);
+      background-size: 200%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transition: 200ms all linear;
+      border: 3px solid $secondary;
+
+      &:hover {
+        background-position: 200%;
+        color: $secondary;
+      }
+    }
+  }
+}
+
+.hello {
+  font-size: 4em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.i-am {
+  font-size: 2.2em;
+  font-weight: normal;
+  margin-top: 0;
+}
