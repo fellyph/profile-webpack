@@ -5,17 +5,23 @@
 
 .header {
   padding-top: 2em;
-}
 
-.hello {
-  font-size: 4em;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-}
+  &__hello {
+    font-size: 4em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
 
-.i-am {
-  font-size: 2.2em;
-  font-weight: normal;
-  margin-top: 0;
+  &__iam {
+    font-size: 2.2em;
+    font-weight: normal;
+    margin-top: 0;
+  }
+
+  &__photo {
+    width: 200px;
+    height: 200px;
+    shape-outside: circle();
+  }
 }
