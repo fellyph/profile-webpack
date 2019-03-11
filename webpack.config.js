@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   entry: './src/index.js',
@@ -26,7 +28,7 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         exclude: /(node_modules|bower_components)/,
         use: [
-          'style-loader',
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
         ],
@@ -54,6 +56,10 @@ module.exports = {
       title: 'Fellyph Cintra Front-end Engineer',
       template: './src/index.html',
       favicon: false,
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
   ],
 };

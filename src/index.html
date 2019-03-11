@@ -5,7 +5,9 @@
 	  <title><%= htmlWebpackPlugin.options.title %></title>
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <meta name="theme-color" content="#000">
-	  <link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet">
+    <link rel="icon" href="<%= require('./assests/icons/fav.jpg') %>" sizes="32x32" />
+    <link rel="icon" href="<%= require('./assests/icons/fav-192.jpg') %>" sizes="192x192" />
 	</head>
 	<body>
 	  <section class="main">
@@ -16,31 +18,31 @@
 				<ul class="social__links">
 					<li class="social__item">
             <a itemprop="sameAs" href="https://www.linkedin.com/in/fellyph-cintra-91801910/" target="_blank" alt="Look my carreer">
-              <img class="social__icon" src="<%=require('./assests/icons/linkedin.svg')%>" />
+              <img class="social__icon" src="<%= require('./assests/icons/linkedin.svg') %>" />
             </a>
           </li>
 					<li class="social__item">
             <a itemprop="sameAs" href="https://github.com/fellyph" target="_blank" alt="Look my github">
-              <img class="social__icon" src="<%=require('./assests/icons/github.svg')%>" />
+              <img class="social__icon" src="<%= require('./assests/icons/github.svg') %>" />
             </a>
           </li>
 					<li class="social__item">
             <a itemprop="sameAs" href="https://www.facebook.com/FellyphBlog/" target="_blank">
-              <img class="social__icon" src="<%=require('./assests/icons/facebook.svg')%>" /
-              ></a>
+              <img class="social__icon" src="<%= require('./assests/icons/facebook.svg') %>" />
+            </a>
 					<li class="social__item">
             <a itemprop="sameAs" href="https://blog.fellyph.com.br/" target="_blank" alt="Some blog's posts over there">
-              <img class="social__icon" src="<%=require('./assests/icons/wordpress.svg')%>" />
+              <img class="social__icon" src="<%= require('./assests/icons/wordpress.svg') %>" />
             </a>
           </li>
 					<li class="social__item">
             <a itemprop="sameAs" href="https://www.slideshare.net/fellyph" target="_blank" alt="Some of my presentations">
-              <img class="social__icon" src="<%=require('./assests/icons/slideshare.svg')%>" />
+              <img class="social__icon" src="<%= require('./assests/icons/slideshare.svg') %>" />
             </a>
           </li>
           <li class="social__item">
             <a itemprop="sameAs" href="https://twitter.com/fellyph" target="_blank" alt="My microblog">
-              <img class="social__icon" src="<%=require('./assests/icons/twitter.svg')%>" />
+              <img class="social__icon" src="<%= require('./assests/icons/twitter.svg') %>" />
             </a>
           </li>
         </ul>
