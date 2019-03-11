@@ -35,7 +35,7 @@ module.exports = {
         test: /\.(woff(2)?|ttf|eot|svg|gif|png|jpe?g)$/,
         loader: 'url-loader',
         options: {
-          limit: 100,
+          limit: 60,
           fallback: 'file-loader',
           publicPath: './img',
           outputPath: './img',
