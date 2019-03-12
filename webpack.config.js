@@ -41,6 +41,7 @@ module.exports = {
           fallback: 'file-loader',
           publicPath: './img',
           outputPath: './img',
+          name: '[name].[ext]'
         },
       },
     ]
