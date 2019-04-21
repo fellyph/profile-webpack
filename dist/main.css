@@ -45,23 +45,25 @@ a {
       margin-right: 0;
       margin-bottom: 2em; } }
 
-.pwa__alert {
-  background: white;
-  color: black;
-  text-align: center;
-  padding: 0.5em;
-  display: none; }
-
 .social {
   text-align: right;
   margin-bottom: 2em; }
   .social__item {
     display: inline-block;
     margin-left: 0.5em;
-    cursor: pointer; }
+    cursor: pointer;
+    vertical-align: middle; }
   .social__icon {
     width: 25px;
     height: 25px; }
+  .social__shareIcon {
+    width: 40px;
+    height: 47px; }
+  .social__shareButton {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: none; }
   .social__links {
     list-style: none;
     padding: 0;
@@ -91,8 +93,10 @@ a {
     .social {
       text-align: center; } }
 
-.about p {
-  margin: 0 0 1em 0; }
+.about {
+  padding: 0.5em; }
+  .about p {
+    margin: 0 0 1em 0; }
 
 .skills {
   padding: 0;
@@ -111,4 +115,20 @@ a {
   width: 100%; }
   .jobs__thumb {
     margin: 0; }
+
+.pwaBanner {
+  background: #f0f0f0;
+  color: black;
+  text-align: center;
+  padding: 0.5em;
+  display: none; }
+  .pwaBanner__btn {
+    border: 1px solid black;
+    background: #f0f0f0;
+    border-radius: 0;
+    padding: 0.7em 1em; }
+    .pwaBanner__btn:hover {
+      border: 1px solid #f0f0f0;
+      background: black;
+      color: #f0f0f0; }
 

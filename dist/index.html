@@ -47,12 +47,13 @@
     />
 
     <meta name="apple-mobile-web-app-title" content="Fellyph Cintra" />
-
     <meta name="apple-mobile-web-app-capable" content="yes" />
-
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link href="/main.css" rel="stylesheet"></head>
   <body>
+    <div class="pwaBanner">
+      <button class="pwaBanner__btn">Adicionar a tela principal</button>
+    </div>
     <section class="main">
       <header class="header">
         <nav class="social" itemscope itemtype="http://schema.org/Person">
@@ -137,6 +138,11 @@
                 />
               </a>
             </li>
+            <li class="social__item">
+              <button class="social__shareButton">
+                <img class="social__shareIcon" src="./img/share.svg" />
+              </button>
+            </li>
           </ul>
         </nav>
         <figure class="header__profile">
@@ -189,9 +195,6 @@
           </ul>
         </header>
       </article>
-      <div class="pwa__alert">
-        <button class="pwa__alert__btn">Adicionar a tela principal</button>
-      </div>
     </section>
   <script type="text/javascript" src="/main.js"></script><script type="text/javascript" src="/sw.js"></script></body>
 </html>

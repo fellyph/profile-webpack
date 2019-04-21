@@ -1,4 +1,4 @@
-const cacheName = 'v2';
+const cacheName = 'profile-v2';
 
 const resourcesToPrecache = [
   '/',
