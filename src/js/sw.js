@@ -1,8 +1,9 @@
-const cacheName = 'profile-v2';
+const cacheName = 'profile-v3';
 
 const resourcesToPrecache = [
   '/',
-  'index.html',
+  '/index.html',
+  '/main.js',
   '/img/profile.-fellyph.jpg',
   '/img/fav.jpg',
   '/img/fav-192.jpg',
