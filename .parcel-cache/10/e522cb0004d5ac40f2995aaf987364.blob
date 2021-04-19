@@ -1,0 +1,84 @@
+
+<html>
+	<head>
+	  <meta charset="UTF-8">
+	  <title>Fellyph Cintra - Front-end developer</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="theme-color" content="#000">
+    <link href="9d29e35b25539bed9ce44239583f6f06" rel="stylesheet">
+    <link rel="icon" href="21a0e7515ce56258e35bd4508bbd294c" sizes="32x32">
+    <link rel="icon" href="d05dd4abbdae326d0e23b27df7de9d0e" sizes="192x192">
+    <link rel="stylesheet" href="81b6256be3fb7181103387a94b0cf93d">
+	</head>
+	<body>
+	  <section class="main">
+		<header class="header">
+		  <nav class="social" itemscope="" itemtype="http://schema.org/Person">
+				<meta itemprop="name" content="Fellyph Cintra">
+				<link itemprop="url" href="dccfe476b485f2dd768935f7fa51cad2">
+				<ul class="social__links">
+					<li class="social__item">
+            <a itemprop="sameAs" href="12785570fa09b2c57bb5b602a8f579d9" target="_blank" alt="Look my carreer">
+              <img class="social__icon" src="6cbf0ad1bb49c48099ce40ed9e607693">
+            </a>
+          </li>
+					<li class="social__item">
+            <a itemprop="sameAs" href="607967d2097149c5a876b65730f26fb0" target="_blank" alt="Look my github">
+              <img class="social__icon" src="f3483c0c9e67a08457ab843a4644c04e">
+            </a>
+          </li>
+					<li class="social__item">
+            <a itemprop="sameAs" href="fefe02c01365659cfedb5745f011f656" target="_blank">
+              <img class="social__icon" src="fc8b0f9d2665ad716b0e6b48d1ea32e1">
+            </a>
+					</li><li class="social__item">
+            <a itemprop="sameAs" href="e70d7e9cc4d1824ddec24961689cbc8a" target="_blank" alt="Some blog's posts over there">
+              <img class="social__icon" src="e530c0f4400fc8fb6b1eb7de5ca4696d">
+            </a>
+          </li>
+					<li class="social__item">
+            <a itemprop="sameAs" href="2986764590ae69b98d57410fe17386e3" target="_blank" alt="Some of my presentations">
+              <img class="social__icon" src="afbf78d3e45107e9914768ce5d77f422">
+            </a>
+          </li>
+          <li class="social__item">
+            <a itemprop="sameAs" href="34cecb40b3c348e39ad6ca4820ca62bf" target="_blank" alt="My microblog">
+              <img class="social__icon" src="1f1f44c641b880988086db1e3c45cae0">
+            </a>
+          </li>
+        </ul>
+			</nav>
+			<figure class="header__profile">
+				<img class="header__picture" src="93c57d19b4fce75f3972b9b01e9ce026">
+        <figcaption>
+          <h2 class="header__hello">Hello.</h2>
+          <h1 class="header__iam">I’m Fellyph Cintra, Brazilian front-end engineer based in Dublin, Ireland.</h1>
+        </figcaption>
+      </figure>
+		</header>
+		<article class="about">
+			<p>I have been working as Web Developer since 2006. I am currently working as a front-end engineer at Deloitte Digital based in Dublin.</p>
+			<p>I’m a team worker and passionate about what I do. I have experience with different work environment, Multinational companies, Startup and digital agencies. </p>
+			<p>My strongest skill is client-side front-end development. And My main domain are HTML, CSS, JavaScript, SASS, LESS, PostCSS, Angular and React. On server-side, I usually code in Java and PHP. I also use GIT for version control, GruntJS, Gulp and Webpack for automating tasks and tests with Ruby(rSpec) and Jenkins. I hold a bachelor degree in Information Systems.</p>
+		</article>
+		<article class="portfolio">
+		  <header>
+				<h3>Main Skills</h3>
+				<ul class="skills">
+					<li class="skills__item">JavaScript</li>
+					<li class="skills__item">HTML5</li>
+					<li class="skills__item">CSS3</li>
+					<li class="skills__item">SASS</li>
+					<li class="skills__item">LESS</li>
+					<li class="skills__item">PostCSS</li>
+					<li class="skills__item">Angular</li>
+					<li class="skills__item">React</li>
+					<li class="skills__item">Webpack</li>
+					<li class="skills__item">WordPress</li>
+				</ul>
+		  </header>
+		</article>
+	  </section>
+	</body>
+  </html>
+<script src="4ad0979c663ae1096c31c630282fb70e"></script>
