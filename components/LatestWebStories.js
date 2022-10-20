@@ -57,13 +57,6 @@ const WebStoryCard = ({ latestPost }) => {
   return (
     <div className="github-repo">
       <div className="web-story flex flex-col xl:flex-row shadow hover:shadow-md w-full dark:bg-gray-700 bg-white rounded-lg overflow-hidden cursor-pointer">
-        <img
-          className="object-cover w-full h-48"
-          src={latestPost._links["wp:featuredmedia"][0].href}
-          alt="Flower and sky"
-          loading="lazy"
-        />
-
         <div className="relative p-4">
           <h3 className="font-semibold text-xl dark:text-gray-200 text-gray-700">
             <a href={latestPost.link} >
