@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import userData from "@constants/data";
+import userData from "@constants/data"; // Import the WebStory type
 import getLatestWebStories from "@lib/getLatestWebStories";
 
-export default function LatestWebStories({ blogstories }) {
-  const [stories, setPosts] = useState([]);
+interface LatestWebStoriesProps {
+  blogstories: WebStory[];
+}
 
-  useEffect(async () => {
-    let latestStories = await getLatestWebStories(userData);
-    console.log(latestStories)
-    setPosts(latestStories);
+export default function LatestWebStories({
+  blogstories,
+}: LatestWebStoriesProps) {
+  const [stories, setStories] = useState<WebStory[]>([]);
+
+  useEffect(() => {
+    const fetchStories = async () => {
+      const latestStories = await getLatestWebStories(userData);
+      setStories(latestStories || []);
+    };
+    fetchStories();
   }, []);
+
   return (
     <section className="bg-[#F1F1F1] -mt-40 dark:bg-gray-900 pb-40">
       <div className="max-w-6xl mx-auto">
@@ -43,27 +51,31 @@ export default function LatestWebStories({ blogstories }) {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-10 lg:-mt-10 gap-y-20">
-        {/* Single github Repo */}
         {stories &&
-          stories.map((latestStories, idx) => (
-            <WebStoryCard latestPost={latestStories} key={idx} />
+          stories.map((latestStory, idx) => (
+            <WebStoryCard latestPost={latestStory} key={idx} />
           ))}
       </div>
     </section>
   );
 }
 
-const WebStoryCard = ({ latestPost }) => {
+interface WebStoryCardProps {
+  latestPost: WebStory;
+}
+
+const WebStoryCard: React.FC<WebStoryCardProps> = ({ latestPost }) => {
   return (
     <div className="github-repo">
       <div className="web-story flex flex-col xl:flex-row shadow hover:shadow-md w-full dark:bg-gray-700 bg-white rounded-lg overflow-hidden cursor-pointer">
         <div className="relative p-4">
           <h3 className="font-semibold text-xl dark:text-gray-200 text-gray-700">
-            <a href={latestPost.link} >
-              {latestPost.title.rendered}
-            </a>
+            <a href={latestPost.link}>{latestPost.title.rendered}</a>
           </h3>
-          <div className="text-base font-normal my-4 dark:text-gray-3ç00 text-gray-500" dangerouslySetInnerHTML={createMarkup(latestPost.excerpt.rendered)} />
+          <div
+            className="text-base font-normal my-4 dark:text-gray-300 text-gray-500"
+            dangerouslySetInnerHTML={createMarkup(latestPost.excerpt.rendered)}
+          />
           <a
             href={latestPost.link}
             className="font-semibold group flex flex-row space-x-2 w-full items-center"
@@ -79,7 +91,6 @@ const WebStoryCard = ({ latestPost }) => {
   );
 };
 
-
-function createMarkup(markupHTML) {
+function createMarkup(markupHTML: string) {
   return { __html: markupHTML };
 }
