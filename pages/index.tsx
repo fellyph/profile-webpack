@@ -1,10 +1,10 @@
+import type { NextPage } from "next";
 import ContainerBlock from "../components/ContainerBlock";
-import FavouriteProjects from "../components/FavouriteProjects";
 import LatestPosts from "../components/LatestPosts";
-import LatestWebStories from "../components/LatestWebStories";
+import LatestVideos from "../components/LatestVideos";
 import Hero from "../components/Hero";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <ContainerBlock
       title="Fellyph Cintra - Developer and Content Creator."
@@ -12,8 +12,9 @@ export default function Home() {
     >
       <Hero />
       <LatestPosts />
-      <LatestWebStories />
-      <FavouriteProjects />
+      <LatestVideos />
     </ContainerBlock>
   );
-}
+};
+
+export default Home;

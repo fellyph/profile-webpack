@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import getLatestPosts from "@lib/getLatestPosts";
 import userData from "@constants/data";
 
-export default function LatestPosts({ blogposts }) {
-  const [posts, setPosts] = useState([]);
+export default function LatestPosts() {
+  const [posts, setPosts] = React.useState<Post[]>([]);
 
-  useEffect(async () => {
-    let latestPosts = await getLatestPosts(userData);
-    setPosts(latestPosts);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const latestPosts = await getLatestPosts(userData);
+      setPosts(latestPosts || []);
+    };
+    fetchPosts();
   }, []);
   return (
     <section className="bg-[#F1F1F1] -mt-40 dark:bg-gray-900 pb-40">
@@ -53,16 +55,17 @@ export default function LatestPosts({ blogposts }) {
   );
 }
 
-const GithubRepoCard = ({ latestPost }) => {
+const GithubRepoCard = ({ latestPost }: { latestPost: Post }) => {
   return (
     <div className="github-repo">
       <h1 className="font-semibold text-xl dark:text-gray-200 text-gray-700">
-      <a href={latestPost.link} >
-        {latestPost.title.rendered}
-      </a>
+        <a href={latestPost.link}>{latestPost.title.rendered}</a>
       </h1>
 
-      <div className="text-base font-normal my-4 text-gray-500" dangerouslySetInnerHTML={createMarkup(latestPost.excerpt.rendered)} />
+      <div
+        className="text-base font-normal my-4 text-gray-500"
+        dangerouslySetInnerHTML={createMarkup(latestPost.excerpt.rendered)}
+      />
 
       <a
         href={latestPost.link}
@@ -77,7 +80,6 @@ const GithubRepoCard = ({ latestPost }) => {
   );
 };
 
-
-function createMarkup(markupHTML) {
-  return {__html: markupHTML};
+function createMarkup(markupHTML: string) {
+  return { __html: markupHTML };
 }

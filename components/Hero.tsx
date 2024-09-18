@@ -37,7 +37,7 @@ export default function Hero() {
       <div className="hidden lg:block relative w-full md:w-1/2 -mr-40 mt-20">
         <div className="w-3/4 ">
           <picture className="shadow">
-            <source type="image/avif" srcSet={userData.avatarAvifUrl} />
+            <source type="image/avif" srcSet={userData.avatarAvifpUrl} />
             <source type="image/webp" srcSet={userData.avatarWebpUrl} />
             <img alt="Fellyph cintra" src={userData.avatarFallbackUrl} />
           </picture>
