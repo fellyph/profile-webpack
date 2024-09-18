@@ -17,15 +17,15 @@ const VideoCard = ({ video, index }: { video: Video; index: number }) => (
         className="transform hover:scale-125 transition duration-2000 ease-out"
       />
       <h3
-        className={`absolute top-10 left-10 text-gray-50 font-bold  ${
-          index === 0 ? "text-xl" : "text-xs"
+        className={`absolute text-gray-50 font-bold  ${
+          index === 0 ? "text-xl top-10 left-10" : "text-xs top-4 left-4"
         } bg-red-500 rounded-md px-2`}
       >
         {video.title}
       </h3>
       <h4
-        className={`absolute bottom-10 left-10 text-gray-50 font-bold  ${
-          index === 0 ? "text-xl" : "text-xs"
+        className={`absolute text-gray-50 font-bold  ${
+          index === 0 ? "text-xl bottom-10 left-10" : "text-xs bottom-4 left-4"
         }`}
       >
         {String(index + 1).padStart(2, "0")}

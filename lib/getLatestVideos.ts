@@ -6,7 +6,7 @@ const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID;
 const getLatestVideos = async (): Promise<Video[]> => {
   try {
     const res = await axios.get<YouTubeApiResponse>(
-      `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=4`
+      `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=7`
     );
     return res.data.items.map((item) => ({
       id: item.id.videoId,
