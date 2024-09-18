@@ -1,7 +1,8 @@
 import React from "react";
-import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
+import { RoughNotationGroup } from "react-rough-notation";
 import { RainbowHighlight } from "./RainbowHighlight";
 import userData from "@constants/data";
+import Image from "next/image";
 
 export default function Hero() {
   const colors = ["#3B82F6", "#D7DF23", "#FF6341", "#FFE34F"];
@@ -36,11 +37,14 @@ export default function Hero() {
       {/* Image container */}
       <div className="hidden lg:block relative w-full md:w-1/2 -mr-40 mt-20">
         <div className="w-3/4 ">
-          <picture className="shadow">
-            <source type="image/avif" srcSet={userData.avatarAvifpUrl} />
-            <source type="image/webp" srcSet={userData.avatarWebpUrl} />
-            <img alt="Fellyph cintra" src={userData.avatarFallbackUrl} />
-          </picture>
+          <Image
+            src={userData.avatarFallbackUrl}
+            alt="Fellyph cintra"
+            width={500} // Specify the width
+            height={500} // Specify the height
+            className="shadow"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
 
           <div className="flex flex-row justify-between mt-4">
             <div className="flex flex-row space-x-4">
