@@ -4,7 +4,7 @@
     "prestart": "next build",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "type-check": "tsc"
   },
   "dependencies": {
@@ -13,7 +13,8 @@
     "next-themes": "^0.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-rough-notation": "^1.0.5"
+    "react-rough-notation": "^1.0.5",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "@types/node": "^22.5.5",
