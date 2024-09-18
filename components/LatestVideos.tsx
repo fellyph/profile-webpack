@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+"use client";
+
+import React from "react";
 import Image from "next/image";
+import useSWR from "swr";
 import getLatestVideos from "@lib/getLatestVideos";
+import VideoCard from "./VideoCard";
+import Link from "next/link";
 
 export default function LatestVideos() {
-  const [videos, setVideos] = useState<Video[]>([]);
+  const {
+    data: videos,
+    error,
+    isLoading,
+  } = useSWR<Video[]>("latestVideos", getLatestVideos);
 
-  useEffect(() => {
-    const fetchVideos = async () => {
-      const latestVideos = await getLatestVideos();
-      setVideos(latestVideos || []);
-    };
-    fetchVideos();
-  }, []);
+  if (isLoading) return <div>Carregando...</div>;
+  if (error) return <div>Erro: Falha ao carregar vídeos</div>;
+  if (!videos || videos.length === 0) return <div>Nenhum vídeo disponível</div>;
 
   return (
     <div className="bg-[#F1F1F1] -mt-40 dark:bg-gray-900">
@@ -22,7 +26,7 @@ export default function LatestVideos() {
             Latest Videos
           </h1>
           <Link
-            href="/projects"
+            href="https://www.youtube.com/@FellyphCintra"
             className="mb-20 md:mb-0 px-8 py-4 rounded-md bg-white shadow-lg text-xl font-semibold flex flex-row space-x-4 items-center dark:text-gray-700"
           >
             <svg
@@ -47,29 +51,7 @@ export default function LatestVideos() {
         {/* Grid starts here */}
         <div className="grid md:grid-cols-3 gap-8 lg:-mt-8 pb-40">
           {videos.map((video, index) => (
-            <a
-              key={video.id}
-              href={`https://www.youtube.com/watch?v=${video.id}`}
-              className={`w-full block ${
-                index === 0 ? "col-span-3" : "col-span-3 sm:col-span-1"
-              } shadow-2xl`}
-            >
-              <div className="relative overflow-hidden">
-                <Image
-                  src={video.thumbnail}
-                  alt={video.title}
-                  width={500}
-                  height={281}
-                  className="transform hover:scale-125 transition duration-2000 ease-out"
-                />
-                <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
-                  {video.title}
-                </h1>
-                <h1 className="absolute bottom-10 left-10 text-gray-50 font-bold text-xl">
-                  {String(index + 1).padStart(2, "0")}
-                </h1>
-              </div>
-            </a>
+            <VideoCard key={video.id} video={video} index={index} />
           ))}
         </div>
       </div>
