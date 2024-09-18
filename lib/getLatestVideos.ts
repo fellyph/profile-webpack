@@ -1,8 +1,7 @@
 import axios from "axios";
 
-// You'll need to replace this with your actual YouTube API key and channel ID
-const API_KEY = "AIzaSyDM0urCp-srXRqOFvSMXY4RI4cUgLdJeZA";
-const CHANNEL_ID = "UCPaufJocHYVHj44iwXG95PA";
+const API_KEY = process.env.YOUTUBE_API_KEY;
+const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID;
 
 const getLatestVideos = async (): Promise<Video[]> => {
   try {
