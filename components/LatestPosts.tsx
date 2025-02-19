@@ -1,9 +1,21 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
-import getLatestPosts from "@lib/getLatestPosts";
-import userData from "@constants/data";
+import getLatestPosts from "../lib/getLatestPosts";
+import userData from "../constants/data";
+
+interface Post {
+  title: {
+    rendered: string;
+  };
+  excerpt: {
+    rendered: string;
+  };
+  link: string;
+}
 
 export default function LatestPosts() {
-  const [posts, setPosts] = React.useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     const fetchPosts = async () => {

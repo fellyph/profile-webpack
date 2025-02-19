@@ -3,9 +3,16 @@
 import React from "react";
 import Image from "next/image";
 import useSWR from "swr";
-import getLatestVideos from "@lib/getLatestVideos";
+import getLatestVideos from "../lib/getLatestVideos";
 import VideoCard from "./VideoCard";
 import Link from "next/link";
+
+interface Video {
+  id: string;
+  title: string;
+  thumbnail: string;
+  publishedAt: string;
+}
 
 export default function LatestVideos() {
   const {

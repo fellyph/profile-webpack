@@ -1,12 +1,12 @@
+"use client";
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const router = useRouter();
-  console.log(router.asPath);
+  const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -17,32 +17,29 @@ export default function Navbar() {
   return (
     <div className="max-w-6xl  mx-auto px-4 py-10 md:py-20">
       <div className="flex  md:flex-row justify-between items-center">
-        <div
-          className="overflow-hidden relative w-20 h-20 rounded-full flex-none">
-         <a href="https://blog.fellyph.com.br">
+        <div className="overflow-hidden relative w-20 h-20 rounded-full flex-none">
+          <Link href="https://blog.fellyph.com.br">
             <img
               className="inset-0 h-full w-full object-cover"
               alt="logo fellyph cintra"
               src="/logo.webp"
             />
-         </a>
+          </Link>
         </div>
         <nav>
           <ul className="flex py-4 space-x-6">
             <li>
-              <a href="/">
+              <Link href="/" className={pathname === "/" ? "font-bold" : ""}>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="https://blog.fellyph.com.br">
-                Blog
-              </a>
+              <Link href="https://blog.fellyph.com.br">Blog</Link>
             </li>
             <li>
-              <a href="https://blog.fellyph.com.br/web-stories/">
+              <Link href="https://blog.fellyph.com.br/web-stories/">
                 Web Stories
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -80,6 +77,5 @@ export default function Navbar() {
         </button>
       </div>
     </div>
-    //Rest of the code
   );
 }
