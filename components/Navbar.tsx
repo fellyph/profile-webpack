@@ -34,12 +34,13 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="https://blog.fellyph.com.br">Blog</Link>
+              <Link href="/work-experience">Work Experience</Link>
             </li>
             <li>
-              <Link href="https://blog.fellyph.com.br/web-stories/">
-                Web Stories
-              </Link>
+              <Link href="/talks">Talks</Link>
+            </li>
+            <li>
+              <Link href="https://blog.fellyph.com.br">Blog</Link>
             </li>
           </ul>
         </nav>
