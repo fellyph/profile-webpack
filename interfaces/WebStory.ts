@@ -6,3 +6,5 @@ interface WebStory {
     rendered: string;
   };
 }
+
+export default WebStory;

@@ -4,3 +4,5 @@ interface Post {
   title: { rendered: string };
   excerpt: { rendered: string };
 }
+
+export default Post;
