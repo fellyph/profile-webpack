@@ -1,0 +1,6 @@
+- move all the headers to the SectionHeadder component
+- check all the interfaces are being used
+- organize the components from each section by folder
+- check the components that need to be server rendered
+- check the components that need to be client rendered
+- implement the work experience section
