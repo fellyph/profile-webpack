@@ -1,6 +1,6 @@
 import { ContainerBlock } from "../components/ContainerBlock";
 import Hero from "../components/Hero";
-import LatestPosts from "../components/LatestPosts";
+import LatestPosts from "../components/posts/LatestPosts";
 import LatestVideos from "../components/videos/LatestVideos";
 import { generateMetadata } from "./metadata";
 

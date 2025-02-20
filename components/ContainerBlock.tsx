@@ -13,12 +13,10 @@ export function ContainerBlock({ children }: ContainerBlockProps) {
   const pathname = usePathname();
 
   return (
-    <div>
-      <main className="dark:bg-gray-800 w-full">
-        <Navbar />
-        <div>{children}</div>
-        <Footer />
-      </main>
-    </div>
+    <main className="dark:bg-gray-800 w-full">
+      <Navbar />
+      <div>{children}</div>
+      <Footer />
+    </main>
   );
 }
