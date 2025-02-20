@@ -4,3 +4,5 @@ interface Video {
   thumbnail: string;
   publishedAt: string;
 }
+
+export default Video;

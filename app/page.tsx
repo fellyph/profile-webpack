@@ -1,7 +1,7 @@
 import { ContainerBlock } from "../components/ContainerBlock";
 import Hero from "../components/Hero";
 import LatestPosts from "../components/LatestPosts";
-import LatestVideos from "../components/LatestVideos";
+import LatestVideos from "../components/videos/LatestVideos";
 import { generateMetadata } from "./metadata";
 
 export const metadata = generateMetadata(

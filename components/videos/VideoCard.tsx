@@ -1,3 +1,4 @@
+import Video from "../../interfaces/Video";
 import Image from "next/image";
 
 const VideoCard = ({ video, index }: { video: Video; index: number }) => (
