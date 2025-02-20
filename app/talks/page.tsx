@@ -1,6 +1,9 @@
+import SectionHeadder from "components/SectionHeader";
 import { ContainerBlock } from "../../components/ContainerBlock";
 
 import { Metadata } from "next";
+import Talk from "interfaces/Talk";
+import TalksCard from "components/TalksCard";
 
 export const metadata: Metadata = {
   title: "Fellyph Cintra - Talks",
@@ -8,45 +11,90 @@ export const metadata: Metadata = {
     "Brazilian front-end engineer and Content Creator based in Lagos, Portugal.",
 };
 
+const talks: Talk[] = [
+  {
+    talk: "AI for Entrepreneurs",
+    conference: "DevFest 2024 Munich",
+    date: "2024-10-10",
+    country: "Germany",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    image: "/images/talks/gdg-lagos-2025.jpg",
+  },
+  {
+    talk: "AI for Entrepreneurs",
+    conference: "DevFest 2024 Mons",
+    date: "2024-10-10",
+    country: "Belgium",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    image: "/images/talks/gdg-lagos-2025.jpg",
+  },
+  {
+    talk: "AI for Entrepreneurs",
+    conference: "DevFest 2024 Porto",
+    date: "2024-10-10",
+    country: "Portugal",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    image: "/images/talks/devfest-2024.png",
+  },
+  {
+    talk: "AI for Entrepreneurs",
+    conference: "DevFest 2024 Isla Gaia",
+    date: "2024-10-10",
+    country: "Portugal",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    image: "/images/talks/gdg-lagos-2025.jpg",
+  },
+  {
+    talk: "AI for Entrepreneurs",
+    conference: "DevFest 2024 Faro",
+    date: "2024-10-10",
+    country: "Portugal",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    image: "/images/talks/devfest-2024.png",
+  },
+  {
+    talk: "Chrome AI",
+    conference: "DevFest 2024 Braga",
+    date: "2024-10-10",
+    country: "Portugal",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    image: "/images/talks/gdg-lagos-2025.jpg",
+  },
+  {
+    talk: "Chrome AI",
+    conference: "Algarve TechHub Summit",
+    date: "2024-10-10",
+    country: "Portugal",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    image: "/images/talks/gdg-lagos-2025.jpg",
+  },
+  {
+    talk: "Chrome AI",
+    conference: "Algarve TechHub Summit",
+    date: "2024-10-10",
+    country: "Portugal",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    image: "/images/talks/gdg-lagos-2025.jpg",
+  },
+];
+
 export default function Talks() {
   return (
     <ContainerBlock>
-      <h1 className="text-6xl lg:text-9xl max-w-lg font-bold text-gray-500 my-20 md:my-0 md:text-white dark:text-gray-600 text-center">
-        Talks
-      </h1>
-      <div className="flex flex-col gap-10">
-        <div className="bg-[#F1F1F1] dark:bg-gray-900">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold">
-              DevFest 2024 - Front-end Developer
-            </h2>
-            <p className="text-gray-500 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quos.
-            </p>
-          </div>
-        </div>
-        <div className="bg-[#F1F1F1] dark:bg-gray-900">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold">
-              DevFest 2024 - Front-end Developer
-            </h2>
-            <p className="text-gray-500 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quos.
-            </p>
-          </div>
-        </div>
-        <div className="bg-[#F1F1F1] dark:bg-gray-900">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold">
-              DevFest 2024 - Front-end Developer
-            </h2>
-            <p className="text-gray-500 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quos.
-            </p>
-          </div>
+      <div className="bg-[#F1F1F1] dark:bg-gray-900">
+        <SectionHeadder title="Talks" />
+        <div className="flex flex-col gap-10">
+          {talks.map((talk, index) => (
+            <TalksCard key={index} {...talk} />
+          ))}
         </div>
       </div>
     </ContainerBlock>
